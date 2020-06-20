@@ -13,7 +13,15 @@ export const ProductContainer = styled.View`
   flex-direction: row;
 `;
 
-export const ProductList = styled(FlatList)`
+interface ListProduct {
+  id: string;
+  title: string;
+  image_url: string;
+  price: number;
+  quantity: number;
+}
+
+export const ProductList = styled(FlatList as new () => FlatList<ListProduct>)`
   flex: 1;
   padding: 0 10px;
 `;
